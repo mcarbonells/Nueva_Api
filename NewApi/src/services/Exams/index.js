@@ -1,7 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const { buildFederatedSchema } = require('@apollo/federation');
-import typeDefs from './typeDefs';
-import resolvers from './resolvers';
+const typeDefs =require('./typeDefs');
+const resolvers = require('./resolvers') ;
 
 const server = new ApolloServer({
     schema: buildFederatedSchema([
@@ -11,7 +11,7 @@ const server = new ApolloServer({
         },
     ]),
 });
-console.log("papas");
-server.listen({ port: 3000 }).then(({ url }) => {
+
+server.listen({ port: 2001 }).then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`);
 });

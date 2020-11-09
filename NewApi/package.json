@@ -5,6 +5,7 @@
 	"scripts": {
 		"build": "babel src -d dist --source-maps",
 		"dev-gateway": "nodemon src/gateway.js --exec babel-node src/gateway.js",
+		"dev-exams": "nodemon src/services/Exams/index.js --exec babel-node src/services/Exams/index.js",
 		"dev": "concurrently \"npm:dev-*\"",
 		"start-gateway": "node dist/gateway.js",
 		"start": "concurrently \"npm:start-*\"",

@@ -68,5 +68,4 @@ const typeDefs = gql`
         deleteUserQuiz(body: UserQuizInput): UserQuiz  
     }
 `;
-
-export default typeDefs;
+module.exports = typeDefs;
