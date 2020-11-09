@@ -4,22 +4,8 @@
 	"main": "gateway.js",
 	"scripts": {
 		"build": "babel src -d dist --source-maps",
-		"dev-averages": "nodemon src/services/averages/index.js --exec babel-node src/services/averages/index.js",
-		"dev-users": "nodemon src/services/users/index.js --exec babel-node src/services/users/index.js",
-		"dev-schedules": "nodemon src/services/schedules/index.js --exec babel-node src/services/schedules/index.js",
-		"dev-survey": "nodemon src/services/survey/index.js --exec babel-node src/services/survey/index.js",
-		"dev-classrooms": "nodemon src/services/classrooms/index.js --exec babel-node src/services/classrooms/index.js",
-		"dev-forums": "nodemon src/services/forums/index.js --exec babel-node src/services/forums/index.js",
-		"dev-academic-history": "nodemon src/services/academic_history/index.js --exec babel-node src/services/academic_history/index.js",
 		"dev-gateway": "nodemon src/gateway.js --exec babel-node src/gateway.js",
 		"dev": "concurrently \"npm:dev-*\"",
-		"start-averages": "node dist/services/averages/index.js",
-		"start-schedules": "node dist/services/schedules/index.js",
-		"start-survey": "node dist/services/survey/index.js",
-		"start-users": "node dist/services/users/index.js",
-		"start-classroom": "node dist/services/classrooms/index.js",
-		"start-forums": "node dist/services/forums/index.js",
-		"start-academic-history": "node dist/services/academic_history/index.js",
 		"start-gateway": "node dist/gateway.js",
 		"start": "concurrently \"npm:start-*\"",
 		"clean": "rimraf dist"
@@ -38,10 +24,13 @@
 		"rimraf": "^3.0.2"
 	},
 	"dependencies": {
+		"@apollo/federation": "^0.20.4",
 		"@apollo/gateway": "^0.21.0",
 		"apollo-server": "^2.18.1",
+		"apollo-server-express": "^2.19.0",
 		"axios": "^0.20.0",
 		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
 		"graphql": "^15.3.0",
 		"moment-timezone": "^0.5.31"
 	}
