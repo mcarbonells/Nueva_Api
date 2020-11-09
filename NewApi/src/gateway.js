@@ -13,10 +13,11 @@ const config = { ssl: true, port: 5000, hostname: "localhost" };
 
 const gateway = new ApolloGateway({
     serviceList: [
-        { name: "Exams", url: `http://172.18.0.3:3000` },
+        { name: "exams", url: `http://localhost:3000` },
     ], //Aqui se agregan los microcervicios con puertos diferentes 5001, 5002, 5003... y se crea su respectiva carpeta en services
     __exposeQueryPlanExperimental: true,
 });
+
 
 const apollo = new ApolloServer({
     gateway,
