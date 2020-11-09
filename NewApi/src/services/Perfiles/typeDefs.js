@@ -1,5 +1,5 @@
 const { gql } = require('apollo-server');
-
+//el type defs se conserva solo se usa la notacion de apollo server
 const typeDefs = gql`
     extend type Query {
         allPerfiles: [Perfil!]

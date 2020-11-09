@@ -11,7 +11,7 @@ const server = new ApolloServer({
         },
     ]),
 });
-
-server.listen({ port: 2007 }).then(({ url }) => {
+//el puerto de este listen es el puerto interno del graphql por eso se usa el 2007 y no el 5002
+server.listen({ port: 2007 }).then(({ url }) => { 
     console.log(`🚀 Server ready at ${url}`);
 });
