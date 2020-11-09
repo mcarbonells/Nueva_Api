@@ -17,7 +17,7 @@ const server = new ApolloServer({
   }])
 });
 server.listen({
-  port: 2001
+  port: 2002
 }).then(({
   url
 }) => {

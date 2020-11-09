@@ -1,9 +1,19 @@
-import { ApolloServer } from "apollo-server-express";
-import { ApolloGateway } from "@apollo/gateway";
-import express from "express";
-import dotenv from "dotenv";
-import fs from "fs";
-import https from "https";
+const {
+  ApolloGateway
+} = require('@apollo/gateway');
+
+const {
+  ApolloServer
+} = require('apollo-server-express');
+
+const express = require('express');
+
+const dotenv = require('dotenv');
+
+const fs = require('fs');
+
+const https = require('https');
+
 dotenv.config();
 const uri = process.env.URI;
 const config = {
@@ -12,12 +22,16 @@ const config = {
   hostname: "localhost"
 };
 const gateway = new ApolloGateway({
-  serviceList: [{
-    name: "exams",
-    url: `http://${uri}:3000`
-  }, {
-    name: "vocabulary",
-    url: `http://${uri}:4000`
+  serviceList: [
+  /*{ name: "Exams", url: `http://${uri}:2001` },
+  { name: "Vocabulary", url: `http://${uri}:2002` },
+  { name: "Niveles", url: `http://${uri}:2003` },
+  { name: "Login", url: `http://${uri}:2004` },
+  { name: "Foro", url: `http://${uri}:2005` },
+  { name: "Soporte", url: `http://${uri}:2006` },*/
+  {
+    name: "Perfiles",
+    url: `http://localhost:2007`
   }],
   //Aqui se agregan los microcervicios con puertos diferentes 5001, 5002, 5003... y se crea su respectiva carpeta en services
   __exposeQueryPlanExperimental: true
@@ -32,7 +46,7 @@ const app = express();
 apollo.applyMiddleware({
   app
 });
-let server = server = https.createServer({
+let server = https.createServer({
   key: fs.readFileSync(`./localhost.key`),
   cert: fs.readFileSync(`./localhost.crt`)
 }, app);
