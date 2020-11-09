@@ -3,12 +3,12 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
     extend type Query {
         allExamLevels: [ExamLevel]
-        examById(body: ExamLevelInput): [ExamLevel]
+        examById(userId: Int): [ExamLevel]
         allWeekQuiz: [WeekQuiz]
-        weekQuizById(body: WeekQuizInput): [WeekQuiz]
+        weekQuizById: [WeekQuiz]
         allUserQuiz: [UserQuiz]
-        userQuizByIdQuiz(body: UserQuizInput): [UserQuiz]
-        userQuizByUserId(body: UserQuizInput): [UserQuiz]
+        userQuizByIdQuiz(idQuiz: Int): [UserQuiz]
+        userQuizByUserId(userId: Int): [UserQuiz]
     }
 
     type ExamLevel {

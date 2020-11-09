@@ -3,11 +3,11 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
     extend type Query {
         allCategories: [Category]
-        categoryByName(body: CategoryInput): [Category]
-        categoryByLevel(body: CategoryInput): [Category]
+        categoryByName(name: String): [Category]
+        categoryByLevel(level: String): [Category]
         allWords: [Words]
-        wordsByName(body: WordsInput): [Words]
-        wordsByCategory(body: WordsInput): [Words]
+        wordsByName(name: String): [Words]
+        wordsByCategory(category: String): [Words]
     }
     type Category {
          name: String

@@ -18,9 +18,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        categoryByName: async (_, { body }) => {
+        categoryByName: async (_, { name }) => {
             return axios
-                .get(`${urlC}/category`, body)
+                .get(`${urlC}/category/${name}`)
                 .then((res) => {
                     return res.data;
                 })
@@ -28,9 +28,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        categoryByLevel: async (_, { body }) => {
+        categoryByLevel: async (_, { level }) => {
             return axios
-                .get(`${urlC}/levelCategory`, body)
+                .get(`${urlC}/levelCategory/${level}`)
                 .then((res) => {
                     return res.data;
                 })
@@ -48,9 +48,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        wordsByCategory: async (_, { body }) => {
+        wordsByCategory: async (_, { category }) => {
             return axios
-                .get(`${urlW}/categoryWord`, body)
+                .get(`${urlW}/categoryWord/${category}`)
                 .then((res) => {
                     return res.data;
                 })
@@ -58,9 +58,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        wordsByName: async (_, { body }) => {
+        wordsByName: async (_, { name }) => {
             return axios
-                .get(`${urlW}/word`, body)
+                .get(`${urlW}/word/${name}`)
                 .then((res) => {
                     return res.data;
                 })
@@ -92,7 +92,7 @@ const resolvers = {
         },
         deleteCategory: async (_, { body }) => {
             return axios
-                .delete(`${urlC}/deleteCategory`, body)
+                .put(`${urlC}/deleteCategory`, body)
                 .then((res) => {
                     return res.data;
                 })

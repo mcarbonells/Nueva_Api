@@ -19,9 +19,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        examById: async (_, { body }) => {
+        examById: async (_, { userId }) => {
             return axios
-                .get(`${url}/userExamLevel`, body)
+                .get(`${url}/userExamLevel/${userId}`)
                 .then((res) => {
                     return res.data;
                 })
@@ -39,9 +39,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        weekQuizById: async (_, { body }) => {
+        weekQuizById: async (_) => {
             return axios
-                .get(`${urlW}/thisWeekQuiz`, body)
+                .get(`${urlW}/thisWeekQuiz`)
                 .then((res) => {
                     return res.data;
                 })
@@ -59,9 +59,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        userQuizByIdQuiz: async (_, { body }) => {
+        userQuizByIdQuiz: async (_, { idQuiz }) => {
             return axios
-                .get(`${urlQ}/usersQuizes`, body)
+                .get(`${urlQ}/usersQuizes/${idQuiz}`)
                 .then((res) => {
                     return res.data;
                 })
@@ -69,9 +69,9 @@ const resolvers = {
                     console.log("F");
                 });
         },
-        userQuizByUserId: async (_, { body }) => {
+        userQuizByUserId: async (_, { userId }) => {
             return axios
-                .get(`${urlQ}/quizOfUser`, body)
+                .get(`${urlQ}/quizOfUser/${userId}`)
                 .then((res) => {
                     return res.data;
                 })
