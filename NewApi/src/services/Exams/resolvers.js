@@ -103,7 +103,7 @@ const resolvers = {
         },
         deleteExam: async (_, { body }) => {
             return axios
-                .put(`${url}/deleteExamLevel`, body)
+                .delete(`${url}/deleteExamLevel`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -123,7 +123,7 @@ const resolvers = {
         },
         updateWeekQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlW}/deactivateQuiz/`, body)
+                .put(`${urlW}/deactivateQuiz/`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -133,7 +133,7 @@ const resolvers = {
         },
         deleteWeekQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlW}/deleteQuiz/`, body)
+                .delete(`${urlW}/deleteQuiz/`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -153,7 +153,7 @@ const resolvers = {
         },
         deleteUserQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlQ}/deleteUserQuiz/`, body)
+                .delete(`${urlQ}/deleteUserQuiz/`, body)
                 .then((res) => {
                     return res.data;
                 })
