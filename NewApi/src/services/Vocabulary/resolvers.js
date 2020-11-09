@@ -92,7 +92,7 @@ const resolvers = {
         },
         deleteCategory: async (_, { body }) => {
             return axios
-                .put(`${urlC}/deleteCategory`, body)
+                .delete(`${urlC}/deleteCategory`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -112,7 +112,7 @@ const resolvers = {
         },
         updateWord: async (_, { body }) => {
             return axios
-                .post(`${urlW}/updateWord/`, body)
+                .put(`${urlW}/updateWord/`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -122,7 +122,7 @@ const resolvers = {
         },
         deleteWord: async (_, { body }) => {
             return axios
-                .post(`${urlW}/deleteWord/`, body)
+                .delete(`${urlW}/deleteWord/`, body)
                 .then((res) => {
                     return res.data;
                 })
