@@ -3,8 +3,8 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlT = `http://localhost:4000/api/v1/threads`;
-const urlE = `http://localhost:4000/api/v1/entrys`;
+const urlT = `http://ec2-3-234-210-1.compute-1.amazonaws.com:4000/api/v1/threads`;
+const urlE = `http://ec2-3-234-210-1.compute-1.amazonaws.com:4000/api/v1/entrys`;
 
 const resolvers = {
     Query: {
