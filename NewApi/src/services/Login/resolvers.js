@@ -2,71 +2,84 @@ const axios = require('axios');
 const dotenv = require ('dotenv') ;
 
 dotenv.config();
-const  urlLogsign = `34.207.165.50`;
+const  urlLogsign = `3.85.224.243`;
 const URLLogsign = `http://${urlLogsign}:${5001}`;
 
 const resolvers = {
     Query: {
         validateToken: async (_, { headers }) => {
             return axios
-				.get(`${URLLogsign}/auth/validate_token`, {
+				.get(`${URLLogsign}/auth/validate_token`, {params:{
 					'client': headers.client,
 					'uid': headers.uid,
 					'access-token': headers.token
-				}, true).then((response) => {
-					let user = response.body.data
+				}}, true).then((response) => {
+					let user = response.data.data
 					user['token'] = response.headers['access-token']
 					user['type'] = response.headers['token-type']
-					user['client'] = response.headers['client']
+					user['client'] = response.headers.client
 					delete user['provider']
 					delete user['uid']
 					delete user['allow_password_change']
-					resolve(user)
-				})
+					return user
+				}).catch ((error) => {
+                    let user ={
+                        id: -1,
+                        email: "",
+                        name: "",
+                        nickname: "",
+                        image: "",
+                        token: "",
+                        type: "",
+                        client:"",
+                        uid: "",
+                        error : "Invalid Token"
+                    }
+                    return user;
+                })
 		},       
     },
     Mutation: {
         logInUser_1: (_, { session }) => {
             return axios
-				.post(`${URLLogsign}/auth/sign_in`, session, true).then(
+				.post(`${URLLogsign}/auth/sign_in`, session).then(
 					(response) => {
-						if(response.statusCode>300){
-						let user ={
-						  id: -1,
-						  email: "",
-						  name: "",
-						  nickname: "",
-						  image: "",
-						  token: "",
-						  type: "",
-						  client:"",
-						  uid: "",
-						  error : response.error.errors[0]
-						}
-						resolve(user)
-						}else{
-						//console.log("Server response => ", response);
-						let user = response.body.data
+					    console.log(response);
+						let user = response.data.data
 						user['token'] = response.headers['access-token']
-						user['uid'] = response.headers['uid']
+						user['uid'] = response.headers.uid
 						user['type'] = response.headers['token-type']
-						user['client'] = response.headers['client']
-						resolve(user);
-						}
+						user['client'] = response.headers.client
+						return  user;
 					}
-				)
+				).catch ((error) => {
+                    console.log(error.response.data.errors);
+                    let user ={
+                        id: -1,
+                        email: "",
+                        name: "",
+                        nickname: "",
+                        image: "",
+                        token: "",
+                        type: "",
+                        client:"",
+                        uid: "",
+                        error : error.response.data.errors[0]
+                    }
+                    return user;
+                })
 		},
         registerUser: (_, { user }) => {
             return axios
-				.post(`${URLLogsign}/auth/`, user, true).then(
-					(response) => {
-						console.log("Server response => ", response);
-						let user = response.body.data
-						user['token'] = response.headers['access-token']
-						user['uid'] = response.headers['uid']
-						user['type'] = response.headers['token-type']
-						user['client'] = response.headers['client']
-						resolve(user);
+				.post(`${URLLogsign}/auth/`, user).then(
+					(res) => {
+						//console.log("Server response => ", res);
+						let user = res.data.data;
+						user['token'] = res.headers['access-token']
+						user['uid'] = res.headers.uid
+						user['type'] = res.headers['token-type']
+						user['client'] = res.headers.client
+						return user;
 					}
 				)
 		},
@@ -75,9 +88,9 @@ const resolvers = {
                 .post(`${URLLogsign}/ldap`, session)
                 .then(
                     (response) => {
-                        console.log(response.body.answer);
-                        if (response.body.answer == "false"){
-                            console.log("elifdel false");
+                        console.log(response.data);
+                        if (response.data.answer == "false"){
+                            console.log("el if del false");
                             let user ={
                                 id: -1,
                                 email: "",
@@ -90,30 +103,33 @@ const resolvers = {
                                 uid: "",
                                 error : "error en validacion de credenciales"
                             }
-                            resolve(user)
+                            return user
                         }else{
                             console.log("validacion eldab");
-                            resolve(1)
-    
-    
+                            return 1
                         }
                     }
-                ).then(function(result){
+                ).then((result)=>{
                 //console.log("validacion then");
                 console.log(result);
                 if (result != 1){
                     //resolve(result)
                     return result
                 }else{ console.log("sending else");
+                console.log("Session: ");
                 console.log(session);
-    
-                    return new Promise((resolve, reject) => {
-                        return axios
-                        .post(`${URLLogsign}/auth/sign_in`,session, true).then(
-                            (response) => {
-                                console.log(response.statusCode);
-                                if(response.statusCode>300){
-    
+                return axios
+                    .post(`${URLLogsign}/auth/sign_in`, session).then(
+                                (response) => {
+                                    console.log(response.data);
+                                    let user = response.data.data
+                                    user['token'] = response.headers['access-token']
+                                    user['uid'] = response.headers.uid
+                                    user['type'] = response.headers['token-type']
+                                    user['client'] = response.headers.client
+                                    return  user;
+                                }
+                            ).catch ((error) => {
                                 let user ={
                                     id: -1,
                                     email: "",
@@ -124,27 +140,15 @@ const resolvers = {
                                     type: "",
                                     client:"",
                                     uid: "",
-                                    error : response.error.errors[0]
+                                    error : "error en validacion de credenciales"
                                 }
-                                resolve(user)
-                                }else{
-    
-                                //console.log("Server response => ", response);
-                                let user = response.body.data
-                                user['token'] = response.headers['access-token']
-                                user['uid'] = response.headers['uid']
-                                user['type'] = response.headers['token-type']
-                                user['client'] = response.headers['client']
-                                resolve(user);
-                                }
-                            }
-                        )
-                    })
+                                return user;
+                            })
                 }
-    
-            })               
-        },        
-        
+
+            })
+        },
+
     },
 };
 
