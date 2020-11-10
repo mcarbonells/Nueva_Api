@@ -1,5 +1,7 @@
-import axios from "axios";
-import dotenv from "dotenv";
+const axios = require('axios');
+
+const dotenv = require('dotenv');
+
 dotenv.config();
 const url = `http://localhost:3000/examLevel`;
 const urlW = `http://localhost:3000/weekQuiz`;
@@ -139,5 +141,5 @@ const resolvers = {
     }
   }
 };
-export default resolvers;
+module.exports = resolvers;
 //# sourceMappingURL=resolvers.js.map

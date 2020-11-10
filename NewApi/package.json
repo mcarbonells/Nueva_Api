@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "gateway.js",
 	"scripts": {
+
 		"build": "babel src -d dist --source-maps",
 
 		"dev-exams": "nodemon src/services/Exams/index.js --exec babel-node src/services/Exams/index.js",
@@ -22,6 +23,7 @@
 		"start-foro": "node dist/services/Foro/index.js",
 		"start-soporte": "node dist/services/Soporte/index.js",
 		"start-login": "node dist/services/Login/index.js",
+    
 		"start-gateway": "node dist/gateway.js",
 		"start": "concurrently \"npm:start-*\"",
 

@@ -1,5 +1,7 @@
-const { gql } = require('apollo-server');
-//el type defs se conserva solo se usa la notacion de apollo server
+const {
+  gql
+} = require('apollo-server');
+
 const typeDefs = gql`
     extend type Query {
         allPerfiles: [Perfil!]
@@ -38,4 +40,5 @@ const typeDefs = gql`
         deleteProfile(id: Int!, perfil: PerfilInput!): String!
     }    
 `;
-module.exports =  typeDefs;
+module.exports = typeDefs;
+//# sourceMappingURL=typeDefs.js.map

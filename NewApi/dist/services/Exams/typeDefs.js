@@ -1,4 +1,7 @@
-import { gql } from "apollo-server";
+const {
+  gql
+} = require('apollo-server');
+
 const typeDefs = gql`
     extend type Query {
         allExamLevels: [ExamLevel]
@@ -67,5 +70,5 @@ const typeDefs = gql`
         deleteUserQuiz(body: UserQuizInput): UserQuiz  
     }
 `;
-export default typeDefs;
+module.exports = typeDefs;
 //# sourceMappingURL=typeDefs.js.map
