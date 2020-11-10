@@ -1,30 +1,30 @@
-const {
+"use strict";
+
+var {
   ApolloServer
 } = require('apollo-server');
 
-const {
+var {
   buildFederatedSchema
 } = require('@apollo/federation');
 
-const {
-  typeDefs
-} = require('./typeDefs');
+var typeDefs = require('./typeDefs');
 
-const {
-  resolvers
-} = require('./resolvers');
+var resolvers = require('./resolvers');
 
-const server = new ApolloServer({
+var server = new ApolloServer({
   schema: buildFederatedSchema([{
     typeDefs,
     resolvers
   }])
-});
+}); //el puerto de este listen es el puerto interno del graphql por eso se usa el 2007 y no el 5002
+
 server.listen({
   port: 2007
-}).then(({
-  url
-}) => {
-  console.log(`🚀 Server ready at ${url}`);
+}).then((_ref) => {
+  var {
+    url
+  } = _ref;
+  console.log("\uD83D\uDE80 Server ready at ".concat(url));
 });
 //# sourceMappingURL=index.js.map

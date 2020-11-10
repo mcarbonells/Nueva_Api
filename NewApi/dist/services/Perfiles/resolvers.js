@@ -1,40 +1,140 @@
-const axios = require('axios');
+"use strict";
 
-const dotenv = require('dotenv');
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var axios = require('axios');
+
+var dotenv = require('dotenv');
 
 dotenv.config();
-const nodoPerfiles = 'localhost';
-const puertoPerfiles = '5002';
-const allProfiles = 'profiles';
-/*const postProfile = 'profiles'
-const editProfile = 'edit/profile'
-const editPassword = 'edit/password'
-const activeProfile = 'active/profile'*/
+var nodoPerfiles = 'localhost'; //debe cambiarse el puerto por aws perfiles
 
-const URLAllPerfiles = `http://${nodoPerfiles}:${puertoPerfiles}/${allProfiles}`;
-/*const URLPostPerfiles = `http://${nodoPerfiles}:${puertoPerfiles}/${postProfile}`;
-const URLEditarPerfiles = `http://${nodoPerfiles}:${puertoPerfiles}/${editProfile}`;
-const URLEditarPassword = `http://${nodoPerfiles}:${puertoPerfiles}/${editPassword}`;
-const URLActivarPerfile = `http://${nodoPerfiles}:${puertoPerfiles}/${activeProfile}`;*/
+var puertoPerfiles = '5002'; // se mantiene l puerto del microservicio 
 
-const resolvers = {
+var allProfiles = 'profiles';
+var postProfile = 'profiles';
+var editProfile = 'edit/profile';
+var editPassword = 'edit/password';
+var activeProfile = 'active/profile';
+var URLAllPerfiles = "http://".concat(nodoPerfiles, ":").concat(puertoPerfiles, "/").concat(allProfiles);
+var URLPostPerfiles = "http://".concat(nodoPerfiles, ":").concat(puertoPerfiles, "/").concat(postProfile);
+var URLEditarPerfiles = "http://".concat(nodoPerfiles, ":").concat(puertoPerfiles, "/").concat(editProfile);
+var URLEditarPassword = "http://".concat(nodoPerfiles, ":").concat(puertoPerfiles, "/").concat(editPassword);
+var URLActivarPerfile = "http://".concat(nodoPerfiles, ":").concat(puertoPerfiles, "/").concat(activeProfile);
+var resolvers = {
   Query: {
-    allPerfiles: async _ => {
-      return axios.get(`${URLAllPerfiles}/profiles`).then(res => {
-        return res.data;
-      }).catch(() => {
-        console.log("No hay todos los perfiles");
+    allPerfiles: function () {
+      var _allPerfiles = _asyncToGenerator(function* (_) {
+        return axios.get("".concat(URLAllPerfiles)).then(res => {
+          return res.data;
+        }).catch(() => {
+          console.log("No hay todos los perfiles");
+        });
       });
-    },
-    profileById: async (_, {
-      id
-    }) => {
-      return axios.get(`${URLAllPerfiles}/profiles/${id}`).then(res => {
-        return res.data;
-      }).catch(() => {
-        console.log("No hay perfil con ese id");
+
+      function allPerfiles(_x) {
+        return _allPerfiles.apply(this, arguments);
+      }
+
+      return allPerfiles;
+    }(),
+    profileById: function () {
+      var _profileById = _asyncToGenerator(function* (_, _ref) {
+        var {
+          id
+        } = _ref;
+        return axios.get("".concat(URLAllPerfiles, "/").concat(id)).then(res => {
+          return res.data;
+        }).catch(() => {
+          console.log("No hay perfil con ese id");
+        });
       });
-    }
+
+      function profileById(_x2, _x3) {
+        return _profileById.apply(this, arguments);
+      }
+
+      return profileById;
+    }()
+  },
+  Mutation: {
+    updateProfile: function () {
+      var _updateProfile = _asyncToGenerator(function* (_, _ref2) {
+        var {
+          id,
+          perfil
+        } = _ref2;
+        return axios.put("".concat(URLEditarPerfiles, "/").concat(id), perfil).then(res => {
+          return res.data;
+        }).catch(() => {
+          console.log("El perfil no fue editado");
+        });
+      });
+
+      function updateProfile(_x4, _x5) {
+        return _updateProfile.apply(this, arguments);
+      }
+
+      return updateProfile;
+    }(),
+    updateProfilePassword: function () {
+      var _updateProfilePassword = _asyncToGenerator(function* (_, _ref3) {
+        var {
+          id,
+          perfil
+        } = _ref3;
+        return axios.put("".concat(URLEditarPassword, "/").concat(id), perfil).then(res => {
+          return res.data;
+        }).catch(() => {
+          console.log("La contraseña del perfil no fue actualizada");
+        });
+      });
+
+      function updateProfilePassword(_x6, _x7) {
+        return _updateProfilePassword.apply(this, arguments);
+      }
+
+      return updateProfilePassword;
+    }(),
+    createProfile: function () {
+      var _createProfile = _asyncToGenerator(function* (_, _ref4) {
+        var {
+          perfil
+        } = _ref4;
+        return axios.post("".concat(URLPostPerfiles), perfil).then(res => {
+          return res.data;
+        }).catch(() => {
+          console.log("El perfil no fue creado");
+        });
+      });
+
+      function createProfile(_x8, _x9) {
+        return _createProfile.apply(this, arguments);
+      }
+
+      return createProfile;
+    }(),
+    deleteProfile: function () {
+      var _deleteProfile = _asyncToGenerator(function* (_, _ref5) {
+        var {
+          id,
+          perfil
+        } = _ref5;
+        return axios.put("".concat(URLActivarPerfile, "/").concat(id), perfil).then(res => {
+          return res.data;
+        }).catch(() => {
+          console.log("El perfil sigue activo");
+        });
+      });
+
+      function deleteProfile(_x10, _x11) {
+        return _deleteProfile.apply(this, arguments);
+      }
+
+      return deleteProfile;
+    }()
   }
 };
 module.exports = resolvers;

@@ -1,44 +1,22 @@
-const {
+"use strict";
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    extend type Query {\n        allPerfiles: [Perfil!]\n        profileById(id: Int!): Perfil!\n    }\n\n    type Perfil {\n        id: Int\n        nombre: String\n        segundoNombre: String\n        apellido: String\n        segundoApellido: String\n        email: String\n        constrasena: String\n        estado: Boolean\n        ubicacion: String\n        descripcion: String\n    }\n    input PerfilInput {\n        id: Int\n        nombre: String\n        segundoNombre: String\n        apellido: String\n        segundoApellido: String\n        email: String\n        constrasena: String\n        estado: Boolean\n        ubicacion: String\n        descripcion: String\n    }\n\n    extend type Mutation {\n        createProfile(perfil: PerfilInput!): String!\n        updateProfile(id: Int!, perfil: PerfilInput!): String!\n        updateProfilePassword(id: Int!, perfil: PerfilInput!): String!\n        deleteProfile(id: Int!, perfil: PerfilInput!): String!\n    }    \n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var {
   gql
-} = require('apollo-server');
+} = require('apollo-server'); //el type defs se conserva solo se usa la notacion de apollo server
 
-const typeDefs = gql`
-    extend type Query {
-        allPerfiles: [Perfil!]
-        profileById(id: Int!): Perfil!
-    }
 
-    type Perfil {
-        id: Int
-        nombre: String
-        segundoNombre: String
-        apellido: String
-        segundoApellido: String
-        email: String
-        constrasena: String
-        estado: Boolean
-        ubicacion: String
-        descripcion: String
-    }
-    input PerfilInput {
-        id: Int
-        nombre: String
-        segundoNombre: String
-        apellido: String
-        segundoApellido: String
-        email: String
-        constrasena: String
-        estado: Boolean
-        ubicacion: String
-        descripcion: String
-    }
-
-    extend type Mutation {
-        createProfile(perfil: PerfilInput!): String!
-        updateProfile(id: Int!, perfil: PerfilInput!): String!
-        updateProfilePassword(id: Int!, perfil: PerfilInput!): String!
-        deleteProfile(id: Int!, perfil: PerfilInput!): String!
-    }    
-`;
+var typeDefs = gql(_templateObject());
 module.exports = typeDefs;
 //# sourceMappingURL=typeDefs.js.map

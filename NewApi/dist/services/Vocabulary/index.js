@@ -1,16 +1,18 @@
-const {
+"use strict";
+
+var {
   ApolloServer
 } = require('apollo-server');
 
-const {
+var {
   buildFederatedSchema
 } = require('@apollo/federation');
 
-const typeDefs = require('./typeDefs');
+var typeDefs = require('./typeDefs');
 
-const resolvers = require('./resolvers');
+var resolvers = require('./resolvers');
 
-const server = new ApolloServer({
+var server = new ApolloServer({
   schema: buildFederatedSchema([{
     typeDefs,
     resolvers
@@ -18,9 +20,10 @@ const server = new ApolloServer({
 });
 server.listen({
   port: 2002
-}).then(({
-  url
-}) => {
-  console.log(`🚀 Server ready at ${url}`);
+}).then((_ref) => {
+  var {
+    url
+  } = _ref;
+  console.log("\uD83D\uDE80 Server ready at ".concat(url));
 });
 //# sourceMappingURL=index.js.map

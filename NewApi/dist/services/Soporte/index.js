@@ -19,7 +19,7 @@ var server = new ApolloServer({
   }])
 });
 server.listen({
-  port: 2001
+  port: 2006
 }).then((_ref) => {
   var {
     url
