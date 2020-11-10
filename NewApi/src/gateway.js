@@ -15,11 +15,11 @@ const gateway = new ApolloGateway({
     serviceList: [
         { name: "Exams", url: `http://localhost:2001` },
         { name: "Vocabulary", url: `http://localhost:2002` },
-        //{ name: "Niveles", url: `http://localhost:2003` },
-        //{ name: "Login", url: `http://localhost:2004` },
-        //{ name: "Foro", url: `http://localhost:2005` },
-        //{ name: "Soporte", url: `http://localhost:2006` },
-        //{ name: "Perfiles", url: `http://localhost:2007` },
+        { name: "Niveles", url: `http://localhost:2003` },
+        { name: "Login", url: `http://localhost:2004` },
+        { name: "Foro", url: `http://localhost:2005` },
+        { name: "Soporte", url: `http://localhost:2006` },
+        { name: "Perfiles", url: `http://localhost:2007` },
     ], //Aqui se agregan los microcervicios con puertos diferentes 5001, 5002, 5003... y se crea su respectiva carpeta en services
     __exposeQueryPlanExperimental: true,
 });
