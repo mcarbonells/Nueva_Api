@@ -3,8 +3,8 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlC = `http://localhost:3001/category`;
-const urlW = `http://localhost:3001/words`;
+const urlC = `http://host.docker.internal:3001/category`;
+const urlW = `http://host.docker.internal:3001/words`;
 
 const resolvers = {
     Query: {
