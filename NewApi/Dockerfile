@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . /usr/src/app/api/
 
-RUN RUN [ "chmod", "+x", "npm run build"]
+RUN npm run build
 
 EXPOSE 5000
 EXPOSE 2001
