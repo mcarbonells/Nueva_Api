@@ -9,7 +9,7 @@ var axios = require('axios');
 var dotenv = require('dotenv');
 
 dotenv.config();
-var urlLogsign = "3.85.224.243";
+var urlLogsign = "localhost";
 var URLLogsign = "http://".concat(urlLogsign, ":", 5001);
 var resolvers = {
   Query: {

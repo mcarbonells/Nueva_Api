@@ -9,9 +9,9 @@ var axios = require('axios');
 var dotenv = require('dotenv');
 
 dotenv.config();
-var url = "http://localhost:3000/examLevel";
-var urlW = "http://localhost:3000/weekQuiz";
-var urlQ = "http://localhost:3000/userQuiz";
+var url = "http://host.docker.internal:3000/examLevel";
+var urlW = "http://host.docker.internal:3000/weekQuiz";
+var urlQ = "http://host.docker.internal:3000/userQuiz";
 var resolvers = {
   Query: {
     allExamLevels: function () {

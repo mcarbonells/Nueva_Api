@@ -9,7 +9,7 @@ var axios = require('axios');
 var dotenv = require('dotenv');
 
 dotenv.config();
-var nodoPerfiles = 'localhost'; //debe cambiarse el puerto por aws perfiles
+var nodoPerfiles = 'ec2-3-88-4-72.compute-1.amazonaws.com'; //debe cambiarse el puerto por aws perfiles
 
 var puertoPerfiles = '5002'; // se mantiene l puerto del microservicio 
 

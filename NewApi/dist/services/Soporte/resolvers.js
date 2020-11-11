@@ -9,7 +9,7 @@ var axios = require('axios');
 var dotenv = require('dotenv');
 
 dotenv.config();
-var urlT = "http://ec2-3-237-29-238.compute-1.amazonaws.com:8080/api/Ticket";
+var urlT = "http://localhost:8080/api/Ticket";
 var resolvers = {
   Query: {
     allTickets: function () {

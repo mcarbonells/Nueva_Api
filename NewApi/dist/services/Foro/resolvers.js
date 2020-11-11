@@ -9,8 +9,8 @@ var axios = require('axios');
 var dotenv = require('dotenv');
 
 dotenv.config();
-var urlT = "http://ec2-3-234-210-1.compute-1.amazonaws.com:4000/api/v1/threads";
-var urlE = "http://ec2-3-234-210-1.compute-1.amazonaws.com:4000/api/v1/entrys";
+var urlT = "http://localhost:4000/api/v1/threads";
+var urlE = "http://localhost:4000/api/v1/entrys";
 var resolvers = {
   Query: {
     allThreads: function () {
