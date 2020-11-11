@@ -3,9 +3,9 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const url = `http://host.docker.internal:3000/examLevel`;
-const urlW = `http://host.docker.internal:3000/weekQuiz`;
-const urlQ = `http://host.docker.internal:3000/userQuiz`;
+const url = `http://http://ec2-54-211-88-12.compute-1.amazonaws.com/:3000/examLevel`;
+const urlW = `http://http://ec2-54-211-88-12.compute-1.amazonaws.com/:3000/weekQuiz`;
+const urlQ = `http://http://ec2-54-211-88-12.compute-1.amazonaws.com/:3000/userQuiz`;
 
 const resolvers = {
     Query: {
