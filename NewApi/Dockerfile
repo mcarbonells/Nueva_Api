@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . /usr/src/app/api/
 
-RUN npm run build
+RUN ["sh","-c","babel src -d dist --source-maps"]
 
 EXPOSE 5000
 EXPOSE 2001
@@ -18,5 +18,4 @@ EXPOSE 2005
 EXPOSE 2006
 EXPOSE 2007
 
-CMD npm run start-perfil
-CMD npm run start-gateway
+CMD npm run start
