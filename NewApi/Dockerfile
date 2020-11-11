@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . /usr/src/app/api/
 
-RUN ["sh","-c","babel src -d dist --source-maps"]
+RUN npm run build
 
 EXPOSE 5000
 EXPOSE 2001
