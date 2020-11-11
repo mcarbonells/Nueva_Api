@@ -15,16 +15,8 @@
 		"dev-login": "nodemon src/services/Login/index.js --exec babel-node src/services/Login/index.js",
 		"dev-gateway": "nodemon src/gateway.js --exec babel-node src/gateway.js",
 		"dev": "concurrently \"npm:dev-*\"",
-
-		"start-exams": "node dist/services/Exams/index.js",
-		"start-vocabulary": "node dist/services/Vocabulary/index.js",
 		"start-perfil": "node dist/services/Perfiles/index.js",
-		"start-level": "node dist/services/Level/index.js",
-		"start-foro": "node dist/services/Foro/index.js",
-		"start-soporte": "node dist/services/Soporte/index.js",
-		"start-login": "node dist/services/Login/index.js",
-    
-		"start-gateway": "node dist/gateway.js",
+    	"start-gateway": "node dist/gateway.js",
 		"start": "concurrently \"npm:start-*\"",
 
 		"clean": "rimraf dist"
