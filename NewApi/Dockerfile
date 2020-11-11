@@ -18,5 +18,5 @@ EXPOSE 2005
 EXPOSE 2006
 EXPOSE 2007
 
-
-CMD npm run start
+CMD npm run start-perfil
+CMD npm run start-gateway
