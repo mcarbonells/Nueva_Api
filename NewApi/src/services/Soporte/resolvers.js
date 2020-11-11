@@ -3,7 +3,7 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlT = `http://ec2-3-237-29-238.compute-1.amazonaws.com:8080/api/Ticket`;
+const urlT = `http://localhost:8080/api/Ticket`;
 
 const resolvers = {
     Query: {
