@@ -3,6 +3,7 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
     extend type Query {
         validateToken(headers: Headers): sessionData
+        getUserByEmail(email: String): User
     }
 
     type User {
