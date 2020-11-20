@@ -2,7 +2,7 @@ const axios = require('axios');
 const dotenv = require ('dotenv') ;
 
 dotenv.config();
-const  urlLogsign = `3.85.224.243`;
+const  urlLogsign = `3.238.95.79`;
 const URLLogsign = `http://${urlLogsign}:${5001}`;
 
 const resolvers = {
@@ -38,14 +38,16 @@ const resolvers = {
                     return user;
                 })
         },  
-        getUserByEmail: async (_, {email})=>{
+        getUserByEmail: async (_, { email })=>{
             return axios
-                .get(`${URLLogsign}/${email}`)
+                .get(`${URLLogsign}/users/email?email=${email}`)
                 .then((res) => {
-                    return response.data.data;
+                    console.log(res);
+                    let user = res.data;
+                    return user;
                 })
                 .catch(() => {
-                    console.log("F");
+                    console.log("No entre");
                 });
         }     
     },
