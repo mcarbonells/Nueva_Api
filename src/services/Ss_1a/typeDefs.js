@@ -8,7 +8,5 @@ const typeDefs = gql`
          name: String
          email: String
     }
-    extend type Mutation {
-    }
 `;
 module.exports = typeDefs;
