@@ -4,13 +4,12 @@ const express = require('express') ;
 const dotenv = require('dotenv');
 const fs = require('fs');
 const https = require('https');
-const http = require('http');
 
 dotenv.config();
 
 const uri = process.env.URI;
 
-const config = { ssl: false, port: 5000, hostname: "localhost" };
+const config = { ssl: true, port: 5000, hostname: "localhost" };
 
 const gateway = new ApolloGateway({
     serviceList: [
@@ -37,11 +36,11 @@ const apollo = new ApolloServer({
 const app = express();
 apollo.applyMiddleware({ app });
 
-let server = (http.createServer(
-    /*
+let server = (https.createServer(
+    {
         key: fs.readFileSync(`./localhost.key`),
         cert: fs.readFileSync(`./localhost.crt`),
-    },*/
+    },
     app
 ));
 
