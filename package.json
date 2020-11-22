@@ -12,6 +12,7 @@
 		"dev-foro": "nodemon src/services/Foro/index.js --exec babel-node src/services/Foro/index.js",
 		"dev-soporte": "nodemon src/services/Soporte/index.js --exec babel-node src/services/Soporte/index.js",
 		"dev-login": "nodemon src/services/Login/index.js --exec babel-node src/services/Login/index.js",
+		"dev-ss_1a": "nodemon src/services/Ss_1a/index.js --exec babel-node src/services/Ss_1a/index.js", 
 		"dev-gateway": "nodemon src/gateway.js --exec babel-node src/gateway.js",
 		"dev": "concurrently \"npm:dev-*\"",
 
@@ -21,7 +22,8 @@
 		"start-level": "node dist/services/Level/index.js",
 		"start-foro": "node dist/services/Foro/index.js",
 		"start-soporte": "node dist/services/Soporte/index.js",
-		"start-login": "node dist/services/Login/index.js",    
+		"start-login": "node dist/services/Login/index.js",
+		"start-ss_1a": "node dist/services/Ss_1a/index.js",    
 		"start-gateway": "node dist/gateway.js",
 		"start": "concurrently \"npm:start-*\"",
 
