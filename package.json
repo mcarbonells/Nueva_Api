@@ -1,0 +1,56 @@
+{
+	"name": "apollo-gateway",
+	"version": "1.0.0",
+	"main": "gateway.js",
+	"scripts": {
+
+		"build": "babel src -d dist --source-maps",
+		"dev-exams": "nodemon src/services/Exams/index.js --exec babel-node src/services/Exams/index.js",
+		"dev-vocabulary": "nodemon src/services/Vocabulary/index.js --exec babel-node src/services/Vocabulary/index.js",
+		"dev-perfil": "nodemon src/services/Perfiles/index.js --exec babel-node src/services/Perfiles/index.js",
+		"dev-level": "nodemon src/services/Level/index.js --exec babel-node src/services/Level/index.js",
+		"dev-foro": "nodemon src/services/Foro/index.js --exec babel-node src/services/Foro/index.js",
+		"dev-soporte": "nodemon src/services/Soporte/index.js --exec babel-node src/services/Soporte/index.js",
+		"dev-login": "nodemon src/services/Login/index.js --exec babel-node src/services/Login/index.js",
+		"dev-ss_1a": "nodemon src/services/Ss_1a/index.js --exec babel-node src/services/Ss_1a/index.js", 
+		"dev-gateway": "nodemon src/gateway.js --exec babel-node src/gateway.js",
+		"dev": "concurrently \"npm:dev-*\"",
+
+		"start-exams": "node dist/services/Exams/index.js",
+		"start-vocabulary": "node dist/services/Vocabulary/index.js",
+		"start-perfil": "node dist/services/Perfiles/index.js",
+		"start-level": "node dist/services/Level/index.js",
+		"start-foro": "node dist/services/Foro/index.js",
+		"start-soporte": "node dist/services/Soporte/index.js",
+		"start-login": "node dist/services/Login/index.js",
+		"start-ss_1a": "node dist/services/Ss_1a/index.js",    
+		"start-gateway": "node dist/gateway.js",
+		"start": "concurrently \"npm:start-*\"",
+
+		"clean": "rimraf dist"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@babel/cli": "^7.11.6",
+		"@babel/core": "^7.11.6",
+		"@babel/node": "^7.10.5",
+		"@babel/preset-env": "^7.11.5",
+		"concurrently": "^5.3.0",
+		"nodemon": "^2.0.4",
+		"rimraf": "^3.0.2"
+	},
+	"dependencies": {
+		"@apollo/federation": "^0.20.4",
+		"@apollo/gateway": "^0.21.0",
+		"apollo-server": "^2.18.1",
+		"apollo-server-express": "^2.19.0",
+		"axios": "^0.20.0",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"graphql": "^15.3.0",
+		"moment-timezone": "^0.5.31"
+	}
+}
