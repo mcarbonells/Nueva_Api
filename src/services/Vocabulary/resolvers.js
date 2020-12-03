@@ -3,8 +3,8 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlC = `http://54.224.230.242:3001/category`;
-const urlW = `http://54.224.230.242:3001/words`;
+const urlC = `http://54.224.42.223:3001/category`;
+const urlW = `http://54.224.42.223:3001/words`;
 
 const resolvers = {
     Query: {
