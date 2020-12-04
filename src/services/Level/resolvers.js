@@ -4,8 +4,9 @@ const dotenv = require ('dotenv') ;
 dotenv.config();
 
 //const url = process.env.URI_UN;
-const urlclass = `http://localhost:9000/classification`;
-const urlprog = `http://localhost:9000/progress`;
+const urlclass = `http://54.163.16.166:9000/classification`;
+const urlprog = `http://54.163.16.166:9000/progress`;
+
 
 const resolvers = {
 	Query: {
