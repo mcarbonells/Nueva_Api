@@ -9,7 +9,7 @@ dotenv.config();
 
 const uri = process.env.URI;
 
-const config = { ssl: true, port: 5000, hostname: "54.163.16.166" };
+const config = { ssl: true, port: 5000, hostname: "localhost" };
 
 const gateway = new ApolloGateway({
     serviceList: [
@@ -21,7 +21,7 @@ const gateway = new ApolloGateway({
         { name: "Soporte", url: `http://localhost:2006` },
         { name: "Perfiles", url: `http://localhost:2007` },
         { name: "Ss_1a", url: `http://localhost:2008` },
-    ], //Aqui se agregan los microcervicios con puertos diferentes 5001, 5002, 5003... y se crea su respectiva carpeta en services
+    ], 
     __exposeQueryPlanExperimental: true,
 });
 
