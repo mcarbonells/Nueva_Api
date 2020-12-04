@@ -3,7 +3,7 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const url = `http://3.90.88.218:9090/getUser1a`;
+const url = `http://54.160.2.249:9090/getUser1a`;
 
 const resolvers = {
     Query: {

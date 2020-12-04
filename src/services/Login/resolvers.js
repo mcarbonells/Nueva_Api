@@ -2,7 +2,7 @@ const axios = require('axios');
 const dotenv = require ('dotenv') ;
 
 dotenv.config();
-const  urlLogsign = `3.238.95.79`;
+const  urlLogsign = `54.160.2.249`;
 const URLLogsign = `http://${urlLogsign}:${5001}`;
 
 const resolvers = {
