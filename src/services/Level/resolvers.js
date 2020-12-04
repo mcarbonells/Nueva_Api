@@ -7,6 +7,7 @@ dotenv.config();
 const urlclass = `http://54.163.16.166:9000/classification`;
 const urlprog = `http://54.163.16.166:9000/progress`;
 
+
 const resolvers = {
 	Query: {
 		allClassification: async (_) =>{
