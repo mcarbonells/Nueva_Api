@@ -13,14 +13,14 @@ const config = { ssl: true, port: 5000, hostname: "localhost" };
 
 const gateway = new ApolloGateway({
     serviceList: [
-        { name: "Exams", url: `http://localhost:2001` },
-        { name: "Vocabulary", url: `http://localhost:2002` },
-        { name: "Levels", url: `http://localhost:2003` },
-        { name: "Login", url: `http://localhost:2004` },
-        { name: "Foro", url: `http://localhost:2005` },
-        { name: "Soporte", url: `http://localhost:2006` },
-        { name: "Perfiles", url: `http://localhost:2007` },
-        { name: "Ss_1a", url: `http://localhost:2008` },
+        { name: "Exams", url: `http://${uri}:2001` },
+        { name: "Vocabulary", url: `http://${uri}:2002` },
+        { name: "Levels", url: `http://${uri}:2003` },
+        { name: "Login", url: `http://${uri}:2004` },
+        { name: "Foro", url: `http://${uri}:2005` },
+        { name: "Soporte", url: `http://${uri}:2006` },
+        { name: "Perfiles", url: `http://${uri}:2007` },
+        { name: "Ss_1a", url: `http://${uri}:2008` },
     ], 
     __exposeQueryPlanExperimental: true,
 });
