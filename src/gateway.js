@@ -9,7 +9,7 @@ dotenv.config();
 
 const uri = process.env.URI;
 
-const config = { ssl: true, port: 5000, hostname: uri };
+const config = { ssl: true, port: 5000, hostname: "54.163.16.166" };
 
 const gateway = new ApolloGateway({
     serviceList: [
