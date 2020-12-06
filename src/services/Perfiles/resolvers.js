@@ -3,18 +3,18 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const nodoPerfiles = '34.206.81.201/perfiles'  //debe cambiarse el puerto por aws perfiles
+const nodoPerfiles = 'perfiles.perfiles.172.31.64.51.xip.io'  //debe cambiarse el puerto por aws perfiles
 const puertoPerfiles = '5002'      // se mantiene l puerto del microservicio 
 const allProfiles = 'profiles'
 const postProfile = 'profiles'
 const editProfile = 'edit/profile'
 const editPassword = 'edit/password'
 const activeProfile = 'active/profile'
-const URLAllPerfiles = `http://${nodoPerfiles}/${puertoPerfiles}/${allProfiles}`;
-const URLPostPerfiles = `http://${nodoPerfiles}/${puertoPerfiles}/${postProfile}`;
-const URLEditarPerfiles = `http://${nodoPerfiles}/${puertoPerfiles}/${editProfile}`;
-const URLEditarPassword = `http://${nodoPerfiles}/${puertoPerfiles}/${editPassword}`;
-const URLActivarPerfile = `http://${nodoPerfiles}/${puertoPerfiles}/${activeProfile}`;
+const URLAllPerfiles = `http://${nodoPerfiles}/${allProfiles}`;
+const URLPostPerfiles = `http://${nodoPerfiles}/${postProfile}`;
+const URLEditarPerfiles = `http://${nodoPerfiles}/${editProfile}`;
+const URLEditarPassword = `http://${nodoPerfiles}/${editPassword}`;
+const URLActivarPerfile = `http://${nodoPerfiles}/${activeProfile}`;
 
 const resolvers = {
     Query: {
