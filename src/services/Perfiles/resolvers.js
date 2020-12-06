@@ -10,11 +10,11 @@ const postProfile = 'profiles'
 const editProfile = 'edit/profile'
 const editPassword = 'edit/password'
 const activeProfile = 'active/profile'
-const URLAllPerfiles = `${nodoPerfiles}/${allProfiles}`;
-const URLPostPerfiles = `${nodoPerfiles}/${postProfile}`;
-const URLEditarPerfiles = `${nodoPerfiles}/${editProfile}`;
-const URLEditarPassword = `${nodoPerfiles}/${editPassword}`;
-const URLActivarPerfile = `${nodoPerfiles}/${activeProfile}`;
+const URLAllPerfiles = `${nodoPerfiles}/${puertoPerfiles}/${allProfiles}`;
+const URLPostPerfiles = `${nodoPerfiles}/${puertoPerfiles}/${postProfile}`;
+const URLEditarPerfiles = `${nodoPerfiles}/${puertoPerfiles}/${editProfile}`;
+const URLEditarPassword = `${nodoPerfiles}/${puertoPerfiles}/${editPassword}`;
+const URLActivarPerfile = `${nodoPerfiles}/${puertoPerfiles}/${activeProfile}`;
 
 const resolvers = {
     Query: {
