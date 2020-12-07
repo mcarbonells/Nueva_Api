@@ -3,7 +3,7 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const nodoPerfiles = 'perfiles.perfiles.172.31.64.51.xip.io'  //debe cambiarse el puerto por aws perfiles
+const nodoPerfiles = 'perfiles.perfiles.172.31.73.189.xip.io'  //debe cambiarse el puerto por aws perfiles
 const puertoPerfiles = '5002'      // se mantiene l puerto del microservicio 
 const allProfiles = 'profiles'
 const postProfile = 'profiles'
