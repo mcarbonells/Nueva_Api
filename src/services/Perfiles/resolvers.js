@@ -22,6 +22,7 @@ const resolvers = {
             return axios
                 .get(`${URLAllPerfiles}`)
                 .then((res) => {
+                    console.log("Entre ALL");
                     return res.data;
                 })
                 .catch(() => {
@@ -32,6 +33,7 @@ const resolvers = {
             return axios
                 .get(`${URLAllPerfiles}/${id}`)
                 .then((res) => {
+                    console.log("Entre BY ID");
                     return res.data;
                 })
                 .catch(() => {
@@ -45,6 +47,7 @@ const resolvers = {
             return axios
                 .put(`${URLEditarPerfiles}/${id}`, perfil)
                 .then((res) => {
+                    console.log("Entre UPDATE");
                     return res.data;
                 })
                 .catch(() => {
@@ -55,6 +58,7 @@ const resolvers = {
             return axios
                 .put(`${URLEditarPassword}/${id}`, perfil)
                 .then((res) => {
+                    console.log("Entre UPDATING P");
                     return res.data;
                 })
                 .catch(() => {
@@ -65,6 +69,7 @@ const resolvers = {
             return axios
                 .post(`${URLPostPerfiles}`, perfil)
                 .then((res) => {
+                    
                     return res.data;
                 })
                 .catch(() => {
