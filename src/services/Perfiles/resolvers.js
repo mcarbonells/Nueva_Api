@@ -3,7 +3,7 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const nodoPerfiles = '54.160.2.249'  //debe cambiarse el puerto por aws perfiles
+const nodoPerfiles = '3.236.172.214'  //debe cambiarse el puerto por aws perfiles
 const puertoPerfiles = '5002'      // se mantiene l puerto del microservicio 
 const allProfiles = 'profiles'
 const postProfile = 'profiles'
