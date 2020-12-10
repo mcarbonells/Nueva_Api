@@ -43,6 +43,7 @@ const resolvers = {
             return axios
                 .get(`${urlW}/AllWords`)
                 .then((res) => {
+                    console.log("All Words");
                     return res.data;
                 })
                 .catch(() => {
@@ -105,6 +106,7 @@ const resolvers = {
             return axios
                 .post(`${urlW}/newWord`, body)
                 .then((res) => {
+                    console.log("Create words");
                     return res.data;
                 })
                 .catch(() => {

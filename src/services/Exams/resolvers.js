@@ -14,6 +14,7 @@ const resolvers = {
             return axios
                 .get(`${url}/AllExams`)
                 .then((res) => {
+                    console.log("All exams");
                     return res.data;
                 })
                 .catch(() => {
@@ -86,6 +87,7 @@ const resolvers = {
             return axios
                 .post(`${url}/newExamLevel/`, body)
                 .then((res) => {
+                    console.log("Create exams");
                     return res.data;
                 })
                 .catch(() => {
