@@ -74,7 +74,7 @@ const resolvers = {
     Mutation: {
         createCategory: async (_, { body }) => {
             return axios
-                .post(`${urlC}/newCategory/`, body)
+                .post(`${urlC}/newCategory`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -115,7 +115,7 @@ const resolvers = {
         },
         updateWord: async (_, { body }) => {
             return axios
-                .put(`${urlW}/updateWord/`, body)
+                .put(`${urlW}/updateWord`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -125,7 +125,7 @@ const resolvers = {
         },
         deleteWord: async (_, { body }) => {
             return axios
-                .delete(`${urlW}/deleteWord/`, body)
+                .delete(`${urlW}/deleteWord`, body)
                 .then((res) => {
                     return res.data;
                 })

@@ -85,7 +85,7 @@ const resolvers = {
     Mutation: {
         createExam: async (_, { body }) => {
             return axios
-                .post(`${url}/newExamLevel/`, body)
+                .post(`${url}/newExamLevel`, body)
                 .then((res) => {
                     console.log("Create exams");
                     return res.data;
@@ -116,7 +116,7 @@ const resolvers = {
         },
         createWeekQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlW}/newQuiz/`, body)
+                .post(`${urlW}/newQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -126,7 +126,7 @@ const resolvers = {
         },
         updateWeekQuiz: async (_, { body }) => {
             return axios
-                .put(`${urlW}/deactivateQuiz/`, body)
+                .put(`${urlW}/deactivateQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -136,7 +136,7 @@ const resolvers = {
         },
         deleteWeekQuiz: async (_, { body }) => {
             return axios
-                .delete(`${urlW}/deleteQuiz/`, body)
+                .delete(`${urlW}/deleteQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -146,7 +146,7 @@ const resolvers = {
         },
         createUserQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlQ}/newQuiz/`, body)
+                .post(`${urlQ}/newQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -156,7 +156,7 @@ const resolvers = {
         },
         deleteUserQuiz: async (_, { body }) => {
             return axios
-                .delete(`${urlQ}/deleteUserQuiz/`, body)
+                .delete(`${urlQ}/deleteUserQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
