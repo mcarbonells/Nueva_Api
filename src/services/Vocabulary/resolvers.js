@@ -3,8 +3,8 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlC = `http://54.160.2.249:3001/category`;
-const urlW = `http://54.160.2.249:3001/words`;
+const urlC = `http://vocabulary.vocabulary.172.31.59.214.xip.io/category`;
+const urlW = `http://vocabulary.vocabulary.172.31.59.214.xip.io/words`;
 
 
 const resolvers = {
@@ -43,6 +43,7 @@ const resolvers = {
             return axios
                 .get(`${urlW}/AllWords`)
                 .then((res) => {
+                    console.log("All Words");
                     return res.data;
                 })
                 .catch(() => {
@@ -73,7 +74,7 @@ const resolvers = {
     Mutation: {
         createCategory: async (_, { body }) => {
             return axios
-                .post(`${urlC}/newCategory/`, body)
+                .post(`${urlC}/newCategory`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -105,6 +106,7 @@ const resolvers = {
             return axios
                 .post(`${urlW}/newWord`, body)
                 .then((res) => {
+                    console.log("Create words");
                     return res.data;
                 })
                 .catch(() => {
@@ -113,7 +115,7 @@ const resolvers = {
         },
         updateWord: async (_, { body }) => {
             return axios
-                .put(`${urlW}/updateWord/`, body)
+                .put(`${urlW}/updateWord`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -123,7 +125,7 @@ const resolvers = {
         },
         deleteWord: async (_, { body }) => {
             return axios
-                .delete(`${urlW}/deleteWord/`, body)
+                .delete(`${urlW}/deleteWord`, body)
                 .then((res) => {
                     return res.data;
                 })

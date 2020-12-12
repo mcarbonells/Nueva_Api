@@ -3,9 +3,9 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const url = `https://54.160.2.249:3000//examLevel`;
-const urlW = `http://54.160.2.249:3000//weekQuiz`;
-const urlQ = `http://54.160.2.249:3000//userQuiz`;
+const url = `https://exams.exams.172.31.65.76.xip.io/examLevel`;
+const urlW = `http://exams.exams.172.31.65.76.xip.io/weekQuiz`;
+const urlQ = `http://exams.exams.172.31.65.76.xip.io/userQuiz`;
 
 
 const resolvers = {
@@ -14,6 +14,7 @@ const resolvers = {
             return axios
                 .get(`${url}/AllExams`)
                 .then((res) => {
+                    console.log("All exams");
                     return res.data;
                 })
                 .catch(() => {
@@ -84,8 +85,9 @@ const resolvers = {
     Mutation: {
         createExam: async (_, { body }) => {
             return axios
-                .post(`${url}/newExamLevel/`, body)
+                .post(`${url}/newExamLevel`, body)
                 .then((res) => {
+                    console.log("Create exams");
                     return res.data;
                 })
                 .catch(() => {
@@ -114,7 +116,7 @@ const resolvers = {
         },
         createWeekQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlW}/newQuiz/`, body)
+                .post(`${urlW}/newQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -124,7 +126,7 @@ const resolvers = {
         },
         updateWeekQuiz: async (_, { body }) => {
             return axios
-                .put(`${urlW}/deactivateQuiz/`, body)
+                .put(`${urlW}/deactivateQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -134,7 +136,7 @@ const resolvers = {
         },
         deleteWeekQuiz: async (_, { body }) => {
             return axios
-                .delete(`${urlW}/deleteQuiz/`, body)
+                .delete(`${urlW}/deleteQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -144,7 +146,7 @@ const resolvers = {
         },
         createUserQuiz: async (_, { body }) => {
             return axios
-                .post(`${urlQ}/newQuiz/`, body)
+                .post(`${urlQ}/newQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
@@ -154,7 +156,7 @@ const resolvers = {
         },
         deleteUserQuiz: async (_, { body }) => {
             return axios
-                .delete(`${urlQ}/deleteUserQuiz/`, body)
+                .delete(`${urlQ}/deleteUserQuiz`, body)
                 .then((res) => {
                     return res.data;
                 })
