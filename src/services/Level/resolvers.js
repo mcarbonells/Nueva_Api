@@ -4,8 +4,8 @@ const dotenv = require ('dotenv') ;
 dotenv.config();
 
 //const url = process.env.URI_UN;
-const urlclass = `http://54.163.16.166:9000/classification`;
-const urlprog = `http://54.163.16.166:9000/progress`;
+const urlclass = `http://niveles.niveles.172.31.66.80.xip.io/classification`;
+const urlprog = `http://niveles.niveles.172.31.66.80.xip.io/progress`;
 
 
 const resolvers = {

@@ -3,7 +3,7 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlT = `http://localhost:8080/api/Ticket`;
+const urlT = `http://soporte.soporte.172.31.66.80.xip.io/api/Ticket`;
 
 const resolvers = {
     Query: {

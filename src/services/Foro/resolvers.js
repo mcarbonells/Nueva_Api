@@ -3,8 +3,8 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const urlT = `http://localhost:4000/api/v1/threads`;
-const urlE = `http://localhost:4000/api/v1/entrys`;
+const urlT = `http://foro.foro.172.31.66.80.xip.io/api/v1/threads`;
+const urlE = `http://foro.foro.172.31.66.80.xip.io/api/v1/entrys`;
 
 const resolvers = {
     Query: {
