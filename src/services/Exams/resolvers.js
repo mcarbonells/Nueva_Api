@@ -3,7 +3,7 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const url = `https://exams.exams.172.31.66.80.xip.io/examLevel`;
+const url = `http://exams.exams.172.31.66.80.xip.io/examLevel`;
 const urlW = `http://exams.exams.172.31.66.80.xip.io/weekQuiz`;
 const urlQ = `http://exams.exams.172.31.66.80.xip.io/userQuiz`;
 
