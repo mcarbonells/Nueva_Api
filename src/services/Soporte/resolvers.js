@@ -5,6 +5,7 @@ dotenv.config();
 
 const urlT = `http://soporte.soporte.172.31.66.80.xip.io/api/Ticket`;
 
+
 const resolvers = {
     Query: {
         allTickets: async (_) => {
