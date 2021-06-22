@@ -3,9 +3,9 @@ const dotenv = require ('dotenv') ;
 
 dotenv.config();
 
-const url = `https://exams.exams.172.31.65.76.xip.io/examLevel`;
-const urlW = `http://exams.exams.172.31.65.76.xip.io/weekQuiz`;
-const urlQ = `http://exams.exams.172.31.65.76.xip.io/userQuiz`;
+const url = `http://localhost:3000/examLevel`;
+const urlW = `http://localhost:3000/weekQuiz`;
+const urlQ = `http://localhost:3000/userQuiz`;
 
 
 const resolvers = {
